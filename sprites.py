@@ -14,9 +14,9 @@ class RedPartical:
         self.acc = vec(0,0)
         self.vel = vec(0,0)
         self.rect.center = self.pos
-        self.gravity = vec(0,0.006)
-        self.wind = vec(0.005, 0)
-        self.c = 0.01
+        self.gravity = vec(0,0.009)
+        self.wind = vec(0.009, 0)
+        self.c = 0.0001
 
     def kinetic_friction(self):
         friction = self.vel.copy()
