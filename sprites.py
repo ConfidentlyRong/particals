@@ -3,10 +3,22 @@ import random
 from settings import *
 vec = pg.math.Vector2
 
+class Tile:
+    def __init__(self, game, pos):
+        self.game = game
+        self.image = pg.Surface((32,32))
+        self.image.fill(('green'))
+        self.rect = self.image.get_rect()
+        self.pos = vec(pos) * 32
+        self.rect = self.pos
+
+    def render(self, surf):
+        surf.blit(self.image, (self.rect.x, self.rect.y))
+
 class RedPartical:
     def __init__(self, game, pos):
         self.game = game
-        self.mass = random.choice([8,7,5, 3, 4, 2])
+        self.mass = random.choice([6,5,4, 3, 2, 1])
         self.image = pg.Surface(((10 * self.mass),(10 * self.mass)))
         self.image.fill(('red'))
         self.rect = self.image.get_rect()
